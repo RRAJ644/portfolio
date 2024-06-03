@@ -60,7 +60,8 @@ export const BentoGridItem = ({
     <div
       className={cn(
         'row-span-1 relative overflow-hidden rounded-3xl border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4',
-        className
+        className,
+        id === 3 ? 'h-96 lg:h-[500px] mt-5' : '' // Adjust the height conditionally based on id
       )}
       style={{
         background: 'rgb(4,7,29)',
@@ -91,11 +92,7 @@ export const BentoGridItem = ({
             />
           )}
         </div>
-        {id === 6 && (
-          <BackgroundGradientAnimation>
-            {/* <div className='absolute z-50 flex items-center text-white font-bold'></div> */}
-          </BackgroundGradientAnimation>
-        )}
+        {id === 6 && <BackgroundGradientAnimation />}
 
         <div
           className={cn(
@@ -108,16 +105,29 @@ export const BentoGridItem = ({
           </div>
 
           <div
-            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
+            className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10 pb-5`}
           >
             {title}
           </div>
 
           {id === 2 && <GridGlobe />}
           {id === 3 && (
-            <div className='flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2'>
-              <div className='flex flex-col gap-3 lg:gap-8'>
-                {['React.js', 'Next.js', 'TypeScript'].map((item) => (
+            <div className='flex flex-row flex-wrap gap-1 lg:gap-5 w-fit -right-3 lg:-right-2'>
+              <div className='flex flex-row flex-wrap h-14 gap-3 lg:gap-8'>
+                {[
+                  'React.js',
+                  'Next.js',
+                  'TypeScript',
+                  'Node.js',
+                  'Express.js',
+                  'Mongoose',
+                  'Sequelize',
+                  'GraphQL',
+                  'Javascript',
+                  'Typescript',
+                  'HTML',
+                  'CSS',
+                ].map((item) => (
                   <span
                     key={item}
                     className='py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]'
@@ -125,19 +135,6 @@ export const BentoGridItem = ({
                     {item}
                   </span>
                 ))}
-                <span className='py-4 px-3 rounded-lg text-center bg-[#10132e]'></span>
-              </div>
-
-              <div className='flex flex-col gap-3 lg:gap-8'>
-                {['VueJS', 'AWS', 'MongoDB'].map((item) => (
-                  <span
-                    key={item}
-                    className='py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]'
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className='py-4 px-3 rounded-lg text-center bg-[#10132e]'></span>
               </div>
             </div>
           )}
@@ -170,5 +167,3 @@ export const BentoGridItem = ({
     </div>
   )
 }
-
-// https://youtu.be/FTH6Dn3AyIQ?t=3610
