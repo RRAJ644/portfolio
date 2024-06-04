@@ -5,12 +5,12 @@ import { Button } from "./ui/MovingBorders";
 
 const Experience = () => {
   return (
-    <div className="py-20 w-full" id="experience">
+    <div className="py-20 w-full flex justify-center items-center flex-col" id="experience">
       <h1 className="heading">
         My <span className="text-purple">work experience</span>
       </h1>
 
-      <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
+      <div className="w-[60%] mt-12">
         {workExperience.map((card) => (
           <Button
             key={card.id}
@@ -31,10 +31,15 @@ const Experience = () => {
                 className="lg:w-32 md:w-20 w-16"
               />
               <div className="lg:ms-5">
+
                 <h1 className="text-start text-xl md:text-2xl font-bold">
                   {card.title}
                 </h1>
-                <p className="text-start text-white-100 mt-3 font-semibold">
+
+                <h2 className="text-start text-xl md:text-2xl font-bold">
+                  at {card.company}
+                </h2>
+                <p className="text-start text-white-100 mt-3 font-bold text-[1.2rem]">
                   {card.desc}
                 </p>
               </div>
